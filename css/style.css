@@ -1,0 +1,1692 @@
+/* =========================================================
+   GOOGLE FONT
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --bg: #070b16;
+    --bg2: #111827;
+
+    --primary: #8b5cf6;
+    --blue: #2563eb;
+    --cyan: #67e8f9;
+
+    --white: #ffffff;
+    --text: #f8fafc;
+    --text-soft: #e2e8f0;
+
+    --muted: #a8b3c5;
+    --muted-light: #cbd5e1;
+
+    --glass: rgba(255,255,255,.06);
+    --border: rgba(255,255,255,.10);
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Sora', sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #070b16 0%,
+            #0f172a 100%
+        );
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+    position: relative;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+body::before {
+    content: '';
+
+    position: fixed;
+
+    top: -220px;
+    left: -180px;
+
+    width: 650px;
+    height: 650px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139,92,246,.22),
+            transparent 70%
+        );
+
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+
+    position: fixed;
+
+    right: -220px;
+    top: 180px;
+
+    width: 550px;
+    height: 550px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37,99,235,.18),
+            transparent 70%
+        );
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.custom-navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 9999;
+
+    padding: 10px 0;
+
+    background:
+        rgba(7,11,22,.88);
+
+    backdrop-filter: blur(20px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.30);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-img {
+    width: 150px;
+    height: 65px;
+
+    object-fit: contain;
+
+    transition: .4s ease;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(139,92,246,.35)
+        );
+}
+
+.logo-img:hover {
+    transform: scale(1.06);
+
+    filter:
+        drop-shadow(
+            0 0 22px
+            rgba(103,232,249,.45)
+        );
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-link {
+    color: #dbe4f0 !important;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    margin-left: 26px;
+
+    position: relative;
+
+    transition: .35s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff !important;
+}
+
+.nav-link::after {
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 3px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #38bdf8
+        );
+
+    transition: .35s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   NAV BUTTONS
+========================================================= */
+
+.btn-login {
+    padding: 11px 24px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    color: #ffffff !important;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: .35s;
+}
+
+.btn-login:hover {
+    background:
+        rgba(255,255,255,.12);
+
+    transform: translateY(-2px);
+
+    color: #ffffff !important;
+}
+
+.btn-start {
+    padding: 12px 28px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #2563eb
+        );
+
+    color: #ffffff !important;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: .35s;
+}
+
+.btn-start:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(124,58,237,.35);
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 140px;
+    padding-bottom: 70px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4,7,18,.98) 0%,
+            rgba(4,7,18,.92) 35%,
+            rgba(4,7,18,.65) 65%,
+            rgba(4,7,18,.25) 100%
+        ),
+        url('../images/hero-shoe.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(5,8,22,.55),
+            transparent
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-sub {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139,92,246,.18),
+            rgba(37,99,235,.14)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #ddd6fe;
+
+    margin-bottom: 28px;
+
+    backdrop-filter: blur(14px);
+}
+
+.hero-title {
+    font-size: 72px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    margin-bottom: 28px;
+
+    letter-spacing: -2px;
+
+    color: #ffffff !important;
+
+    text-shadow:
+        0 8px 35px rgba(0,0,0,.55);
+}
+
+.hero-title span {
+    background:
+        linear-gradient(
+            90deg,
+            #a78bfa,
+            #60a5fa,
+            #67e8f9
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    max-width: 560px;
+
+    color: #dbe4f0 !important;
+
+    margin-bottom: 42px;
+
+    text-shadow:
+        0 2px 12px rgba(0,0,0,.40);
+}
+
+
+/* =========================================================
+   HERO FEATURES
+========================================================= */
+
+.hero-features {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    max-width: 430px;
+}
+
+.hero-feature-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px 22px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    backdrop-filter: blur(16px);
+
+    transition: .4s;
+}
+
+.hero-feature-box:hover {
+    transform:
+        translateX(6px)
+        translateY(-3px);
+
+    border-color:
+        rgba(139,92,246,.50);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.20);
+}
+
+.hero-icon {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #2563eb
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(139,92,246,.28);
+
+    flex-shrink: 0;
+}
+
+.hero-feature-box h4 {
+    font-size: 18px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+
+    color: #ffffff !important;
+}
+
+.hero-feature-box p {
+    font-size: 13px;
+
+    margin: 0;
+
+    color: #cbd5e1 !important;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ORBIT SECTION
+========================================================= */
+
+.orbit-section {
+    position: relative;
+
+    padding-top: 150px;
+    padding-bottom: 120px;
+
+    min-height: 850px;
+
+    overflow: hidden;
+
+    scroll-margin-top: 90px;
+}
+
+.orbit-section .container {
+    position: relative;
+
+    z-index: 2;
+}
+
+.orbit-subtitle {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(139,92,246,.12);
+
+    border:
+        1px solid rgba(167,139,250,.30);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #ddd6fe !important;
+
+    margin-bottom: 18px;
+}
+
+.orbit-title {
+    font-size: 56px;
+
+    font-weight: 800;
+
+    margin-bottom: 70px;
+
+    line-height: 1.15;
+
+    color: #ffffff !important;
+
+    text-shadow:
+        0 8px 30px rgba(0,0,0,.45);
+}
+
+
+/* =========================================================
+   ORBIT WRAPPER
+========================================================= */
+
+.orbit-wrapper {
+    position: relative;
+
+    width: 560px;
+    height: 560px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   ORBIT GLOW
+========================================================= */
+
+.orbit-glow {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width: 390px;
+    height: 390px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139,92,246,.22),
+            rgba(37,99,235,.08) 45%,
+            transparent 72%
+        );
+
+    filter: blur(25px);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   ORBIT RING
+========================================================= */
+
+.orbit::before {
+    content: '';
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 390px;
+    height: 390px;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(139,92,246,.16);
+
+    box-shadow:
+        0 0 50px
+        rgba(139,92,246,.08);
+}
+
+
+/* =========================================================
+   CENTER CIRCLE
+========================================================= */
+
+.center-circle {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width: 205px;
+    height: 205px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(139,92,246,.18),
+            #111827 62%,
+            #0b1220 100%
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+
+    z-index: 100;
+
+    border:
+        1px solid
+        rgba(139,92,246,.38);
+
+    box-shadow:
+        0 0 30px
+        rgba(139,92,246,.25),
+
+        0 0 90px
+        rgba(37,99,235,.16),
+
+        inset 0 0 35px
+        rgba(255,255,255,.05);
+
+    animation:
+        centerLogoGlow 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CENTER ELARA LOGO
+========================================================= */
+
+.center-circle img {
+    width: 155px;
+    height: 155px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(139,92,246,.50)
+        )
+
+        drop-shadow(
+            0 0 25px
+            rgba(103,232,249,.25)
+        );
+
+    transition: .4s ease;
+}
+
+.center-circle:hover img {
+    transform: scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(139,92,246,.65)
+        )
+
+        drop-shadow(
+            0 0 30px
+            rgba(103,232,249,.30)
+        );
+}
+
+
+/* =========================================================
+   CENTER LOGO GLOW
+========================================================= */
+
+@keyframes centerLogoGlow {
+
+    0%,100% {
+        box-shadow:
+            0 0 30px
+            rgba(139,92,246,.22),
+
+            0 0 75px
+            rgba(37,99,235,.14),
+
+            inset 0 0 35px
+            rgba(255,255,255,.04);
+    }
+
+    50% {
+        box-shadow:
+            0 0 45px
+            rgba(139,92,246,.38),
+
+            0 0 100px
+            rgba(37,99,235,.20),
+
+            inset 0 0 40px
+            rgba(255,255,255,.06);
+    }
+}
+
+
+/* =========================================================
+   ORBIT ANIMATION
+========================================================= */
+
+.orbit {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    animation:
+        rotateOrbit 28s linear infinite;
+}
+
+.orbit:hover {
+    animation-play-state: paused;
+}
+
+
+/* =========================================================
+   BRAND ITEM
+========================================================= */
+
+.brand-item {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 86px;
+    height: 86px;
+
+    margin: -43px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background:
+        #ffffff;
+
+    border:
+        2px solid
+        rgba(255,255,255,.15);
+
+    transform:
+        rotate(var(--x))
+        translate(210px)
+        rotate(calc(var(--x) * -1));
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.35);
+
+    transition:
+        border-color .3s,
+        box-shadow .3s,
+        scale .3s;
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   BRAND IMAGE
+========================================================= */
+
+.brand-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   BRAND HOVER
+========================================================= */
+
+.brand-item:hover {
+    border-color:
+        #8b5cf6;
+
+    box-shadow:
+        0 0 35px
+        rgba(139,92,246,.45);
+
+    scale: 1.12;
+
+    z-index: 200;
+}
+
+
+/* =========================================================
+   BRAND PREVIEW
+========================================================= */
+
+.brand-preview {
+    display: none;
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products-section {
+    padding: 120px 0;
+
+    position: relative;
+}
+
+.product-mini-title {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #c4b5fd !important;
+
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-size: 54px;
+
+    font-weight: 800;
+
+    margin-bottom: 18px;
+
+    color: #ffffff !important;
+
+    text-shadow:
+        0 8px 30px rgba(0,0,0,.35);
+}
+
+.section-text {
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    color: #cbd5e1 !important;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+.preview-product-card {
+    height: 100%;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.03)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    backdrop-filter: blur(18px);
+
+    transition: .45s;
+}
+
+.preview-product-card:hover {
+    transform: translateY(-10px);
+
+    border-color:
+        rgba(139,92,246,.50);
+
+    box-shadow:
+        0 25px 50px
+        rgba(0,0,0,.30);
+}
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
+
+.preview-image {
+    position: relative;
+
+    height: 260px;
+
+    overflow: hidden;
+
+    background: #111827;
+}
+
+.preview-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+.preview-product-card:hover
+.preview-image img {
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   PRODUCT OVERLAY
+========================================================= */
+
+.preview-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,.48);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+
+    transition: .4s;
+}
+
+.preview-product-card:hover
+.preview-overlay {
+    opacity: 1;
+}
+
+.preview-overlay a {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 22px;
+
+    transition: .35s;
+}
+
+.preview-overlay a:hover {
+    background: #8b5cf6;
+
+    color: #ffffff;
+
+    transform: scale(1.1);
+}
+
+
+/* =========================================================
+   PRODUCT CONTENT
+========================================================= */
+
+.preview-content {
+    padding: 24px;
+}
+
+.preview-brand {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #a78bfa !important;
+
+    display: inline-block;
+
+    margin-bottom: 12px;
+}
+
+.preview-content h4 {
+    font-size: 28px;
+
+    font-weight: 700;
+
+    margin-bottom: 14px;
+
+    color: #ffffff !important;
+}
+
+.preview-content p {
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #cbd5e1 !important;
+
+    margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   PRODUCT FOOTER
+========================================================= */
+
+.preview-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.product-rating {
+    display: flex;
+
+    gap: 4px;
+}
+
+.product-rating i {
+    font-size: 14px;
+
+    color: #facc15;
+}
+
+
+/* =========================================================
+   PRODUCT BUTTON
+========================================================= */
+
+.preview-btn {
+    padding: 11px 18px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #2563eb
+        );
+
+    color: #ffffff !important;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: .35s;
+}
+
+.preview-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(139,92,246,.35);
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   MAIN CTA
+========================================================= */
+
+.hero-signup-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px 32px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #2563eb
+        );
+
+    color: #ffffff !important;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition: .4s;
+}
+
+.hero-signup-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 20px 40px
+        rgba(139,92,246,.35);
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features-section {
+    padding: 110px 0;
+}
+
+.feature-card {
+    padding: 38px 30px;
+
+    text-align: center;
+
+    border-radius: 26px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    transition: .35s;
+
+    backdrop-filter: blur(14px);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 20px 45px
+        rgba(124,58,237,.18);
+}
+
+.feature-card i {
+    font-size: 46px;
+
+    margin-bottom: 22px;
+
+    color: #a78bfa;
+}
+
+.feature-card h3 {
+    font-size: 26px;
+
+    font-weight: 700;
+
+    margin-bottom: 14px;
+
+    color: #ffffff !important;
+}
+
+.feature-card p {
+    line-height: 1.9;
+
+    font-size: 15px;
+
+    color: #cbd5e1 !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer-section {
+    padding: 90px 0 30px;
+
+    background: #050816;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+}
+
+.footer-logo {
+    width: 100px;
+    height: 100px;
+
+    object-fit: contain;
+
+    margin-bottom: 24px;
+}
+
+.footer-desc {
+    color: #aeb9c9 !important;
+
+    line-height: 2;
+
+    max-width: 340px;
+
+    font-size: 15px;
+}
+
+.footer-heading {
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 24px;
+
+    position: relative;
+
+    color: #ffffff !important;
+}
+
+.footer-heading::after {
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    bottom: -10px;
+
+    width: 42px;
+    height: 3px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #3b82f6
+        );
+}
+
+.footer-links {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 14px;
+}
+
+.footer-links a {
+    color: #aeb9c9 !important;
+
+    font-size: 15px;
+
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: #a78bfa !important;
+
+    padding-left: 5px;
+}
+
+.footer-contact p {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #cbd5e1 !important;
+
+    margin-bottom: 18px;
+
+    font-size: 15px;
+}
+
+.footer-contact i {
+    color: #a78bfa;
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.footer-social {
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+.footer-social a {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.06);
+
+    color: #ffffff !important;
+
+    transition: .35s;
+}
+
+.footer-social a:hover {
+    background:
+        linear-gradient(
+            45deg,
+            #8b5cf6,
+            #2563eb
+        );
+
+    transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    margin-top: 60px;
+
+    padding-top: 24px;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+
+    color: #94a3b8 !important;
+}
+
+
+/* =========================================================
+   ORBIT ANIMATION
+========================================================= */
+
+@keyframes rotateOrbit {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .hero {
+        text-align: center;
+
+        padding-top: 150px;
+    }
+
+    .hero-title {
+        font-size: 52px;
+    }
+
+    .hero-text {
+        margin:
+            auto
+            auto
+            35px;
+    }
+
+    .hero-features {
+        margin: auto;
+    }
+
+    .orbit-section {
+        padding-top: 130px;
+    }
+
+    .orbit-wrapper {
+        width: 460px;
+        height: 460px;
+    }
+
+    .orbit::before {
+        width: 330px;
+        height: 330px;
+    }
+
+    .center-circle {
+        width: 170px;
+        height: 170px;
+    }
+
+    .center-circle img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .brand-item {
+        width: 72px;
+        height: 72px;
+
+        margin: -36px;
+
+        transform:
+            rotate(var(--x))
+            translate(170px)
+            rotate(calc(var(--x) * -1));
+    }
+
+    .orbit-title,
+    .section-title {
+        font-size: 40px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .custom-navbar {
+        padding: 8px 0;
+    }
+
+    .logo-img {
+        width: 120px;
+        height: 55px;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding-top: 130px;
+        padding-bottom: 50px;
+    }
+
+    .hero-title {
+        font-size: 40px;
+
+        letter-spacing: -1px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .hero-feature-box {
+        padding: 15px;
+
+        text-align: left;
+    }
+
+    .hero-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 18px;
+    }
+
+    .orbit-section {
+        padding-top: 110px;
+        padding-bottom: 90px;
+
+        min-height: auto;
+    }
+
+    .orbit-title {
+        font-size: 30px;
+
+        margin-bottom: 45px;
+    }
+
+    .orbit-wrapper {
+        width: 320px;
+        height: 320px;
+    }
+
+    .orbit::before {
+        width: 235px;
+        height: 235px;
+    }
+
+    .orbit-glow {
+        width: 250px;
+        height: 250px;
+    }
+
+    .center-circle {
+        width: 125px;
+        height: 125px;
+
+        padding: 8px;
+    }
+
+    .center-circle img {
+        width: 95px;
+        height: 95px;
+    }
+
+    .brand-item {
+        width: 56px;
+        height: 56px;
+
+        margin: -28px;
+
+        transform:
+            rotate(var(--x))
+            translate(120px)
+            rotate(calc(var(--x) * -1));
+    }
+
+    .product-mini-title {
+        font-size: 11px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .section-text {
+        font-size: 14px;
+    }
+
+    .preview-footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .features-section {
+        padding: 80px 0;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-contact p {
+        justify-content: center;
+    }
+
+    .footer-heading::after {
+        left: 50%;
+
+        transform:
+            translateX(-50%);
+    }
+}

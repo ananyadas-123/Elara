@@ -1,0 +1,359 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#050816;
+color:white;
+overflow-x:hidden;
+position:relative;
+}
+
+/* HERO BACKGROUND */
+.welcome-hero{
+min-height:85vh;
+display:flex;
+align-items:center;
+
+background:
+linear-gradient(to right,
+rgba(5,8,22,0.92),
+rgba(5,8,22,0.70),
+rgba(5,8,22,0.40)
+),
+url('../images/hero-shoe.png');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+padding:120px 0;
+}
+
+/* HERO TEXT */
+.welcome-left h1{
+font-size:60px;
+font-weight:900;
+}
+
+.welcome-tag{
+color:#a78bfa;
+letter-spacing:4px;
+font-weight:700;
+}
+
+/* BUTTONS */
+.hero-btn{
+padding:15px 32px;
+border:none;
+border-radius:12px;
+background:#6366f1;
+color:white;
+font-weight:700;
+}
+
+.hero-btn-outline{
+padding:15px 30px;
+border-radius:12px;
+background:transparent;
+border:1px solid #fff3;
+color:white;
+}
+
+/* ================= ORBIT ================= */
+
+.orbit-section{
+padding:100px 0;
+text-align:center;
+}
+
+.orbit-wrapper{
+position:relative;
+width:500px;
+height:500px;
+margin:auto;
+}
+
+.center-circle{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:170px;
+height:170px;
+border-radius:50%;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:10;
+}
+
+.center-circle img{
+width:100px;
+}
+
+/* ORBIT ROTATION */
+.orbit{
+position:absolute;
+width:100%;
+height:100%;
+animation:spin 25s linear infinite;
+}
+
+.brand-item{
+position:absolute;
+top:50%;
+left:50%;
+width:80px;
+height:80px;
+border-radius:50%;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:#111827;
+border:2px solid rgba(255,255,255,0.08);
+
+transform:
+rotate(calc(var(--i) * 60deg))
+translate(190px)
+rotate(calc(var(--i) * -60deg));
+}
+
+.brand-item img{
+width:60%;
+}
+
+.brand-item:hover{
+transform:
+rotate(calc(var(--i) * 60deg))
+translate(190px)
+rotate(calc(var(--i) * -60deg))
+scale(1.15);
+
+border-color:#8b5cf6;
+}
+
+/* ROTATION */
+@keyframes spin{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+
+/* FOOTER */
+.footer{
+margin-top:80px;
+text-align:center;
+color:#94a3b8;
+padding:30px;
+}
+
+/* ================= PROFILE DROPDOWN ================= */
+
+.profile-dropdown{
+position:relative;
+}
+
+/* PROFILE IMAGE */
+
+.profile-box{
+
+width:48px;
+height:48px;
+
+border-radius:50%;
+
+overflow:hidden;
+
+cursor:pointer;
+
+border:2px solid rgba(255,255,255,.12);
+
+transition:.35s;
+}
+
+.profile-box img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+}
+
+.profile-box:hover{
+
+transform:scale(1.05);
+
+border-color:#8b5cf6;
+}
+
+/* MENU */
+
+.profile-menu{
+
+position:absolute;
+
+top:65px;
+right:0;
+
+width:290px;
+
+background:
+linear-gradient(
+180deg,
+#111827,
+#0f172a
+);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+padding:20px;
+
+display:none;
+
+z-index:9999;
+
+backdrop-filter:blur(18px);
+
+box-shadow:
+0 25px 60px rgba(0,0,0,.35);
+}
+
+/* ACTIVE */
+
+.profile-menu.active{
+display:block;
+}
+
+/* TOP */
+
+.profile-top{
+
+display:flex;
+align-items:center;
+
+gap:15px;
+
+padding-bottom:18px;
+
+margin-bottom:18px;
+
+border-bottom:
+1px solid rgba(255,255,255,.08);
+}
+
+.profile-top img{
+
+width:60px;
+height:60px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:2px solid #8b5cf6;
+}
+
+.profile-top h4{
+
+font-size:18px;
+
+font-weight:700;
+
+margin-bottom:4px;
+
+color:white;
+}
+
+.profile-top span{
+
+font-size:13px;
+
+color:#94a3b8;
+}
+
+/* LINKS */
+
+.profile-menu a{
+
+display:flex;
+align-items:center;
+
+gap:14px;
+
+padding:14px 16px;
+
+border-radius:16px;
+
+color:#e2e8f0;
+
+font-size:15px;
+
+font-weight:600;
+
+margin-bottom:10px;
+
+transition:.35s;
+}
+
+.profile-menu a i{
+
+width:36px;
+height:36px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:12px;
+
+background:
+rgba(255,255,255,.05);
+
+font-size:15px;
+}
+
+.profile-menu a:hover{
+
+background:
+linear-gradient(
+135deg,
+#8b5cf6,
+#2563eb
+);
+
+transform:translateX(6px);
+
+color:white;
+}
+
+/* LOGOUT */
+
+.logout-link{
+
+background:
+rgba(239,68,68,.10);
+
+color:#f87171 !important;
+}
+
+.logout-link:hover{
+
+background:
+linear-gradient(
+135deg,
+#ef4444,
+#dc2626
+) !important;
+
+color:white !important;
+}

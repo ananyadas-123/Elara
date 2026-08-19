@@ -48,11 +48,6 @@ $user = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM users"));
             Home Slider
         </a>
 
-        <a href="#" onclick="loadPage('trending_products.php')">
-            <i class="fa-solid fa-fire"></i>
-            Trending Products
-        </a>
-
         <a href="#" onclick="loadPage('manage_products.php')">
             <i class="fa-solid fa-box"></i>
             Products
@@ -67,11 +62,11 @@ $user = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM users"));
             <i class="fa-solid fa-layer-group"></i>
             Categories
         </a>
-
+<!-- 
         <a href="#" onclick="loadPage('add_category.php')">
             <i class="fa-solid fa-folder-plus"></i>
             Add Category
-        </a>
+        </a> -->
 
         <a href="#" onclick="loadPage('manage_featured.php')">
             <i class="fa-solid fa-star"></i>

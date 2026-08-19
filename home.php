@@ -2074,7 +2074,7 @@ img{
         <div class="center-circle">
 
             <img
-                src="images/elara-logo.png"
+                src="images/logo.png"
                 alt="ELARA Logo">
 
         </div>

@@ -53,28 +53,27 @@ body{
     font-family:'Poppins',sans-serif;
 
     background:
+        radial-gradient(
+            circle at 8% 15%,
+            <?php echo $themeColor; ?>18 0%,
+            transparent 28%
+        ),
 
-    radial-gradient(
-        circle at 10% 10%,
-        <?php echo $themeColor; ?>30 0%,
-        transparent 28%
-    ),
+        radial-gradient(
+            circle at 92% 80%,
+            <?php echo $themeColor; ?>12 0%,
+            transparent 30%
+        ),
 
-    radial-gradient(
-        circle at 90% 85%,
-        <?php echo $themeColor; ?>20 0%,
-        transparent 30%
-    ),
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(49,46,129,.18) 0%,
+            transparent 30%
+        ),
 
-    radial-gradient(
-        circle at 70% 20%,
-        #312e8130 0%,
-        transparent 25%
-    ),
+        #020617;
 
-    #020617;
-
-    color:white;
+    color:#fff;
 
     overflow-x:hidden;
 }
@@ -86,12 +85,17 @@ body{
 
 .navbar{
 
-    background:#020617;
+    background:rgba(2,6,23,.92);
 
     padding:18px 0;
 
     border-bottom:1px solid rgba(255,255,255,.08);
 
+    backdrop-filter:blur(18px);
+
+    position:relative;
+
+    z-index:100;
 }
 
 
@@ -101,18 +105,24 @@ body{
 
 .hero{
 
-    padding:110px 0 90px;
-
     position:relative;
+
+    min-height:680px;
+
+    padding:80px 0 80px;
 
     overflow:hidden;
 
-    min-height:620px;
-
+    background:
+        radial-gradient(
+            ellipse at 75% 45%,
+            <?php echo $themeColor; ?>12 0%,
+            transparent 38%
+        );
 }
 
 
-/* Background glow */
+/* Large ambient glow */
 
 .hero::before{
 
@@ -120,31 +130,33 @@ body{
 
     position:absolute;
 
-    width:650px;
+    width:750px;
 
-    height:650px;
+    height:750px;
+
+    top:-260px;
+
+    right:-180px;
+
+    border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            <?php echo $themeColor; ?>20,
-            transparent 68%
+            <?php echo $themeColor; ?>18 0%,
+            <?php echo $themeColor; ?>08 35%,
+            transparent 70%
         );
 
-    border-radius:50%;
-
-    top:-230px;
-
-    right:-180px;
-
-    filter:blur(25px);
+    filter:blur(40px);
 
     pointer-events:none;
 
+    z-index:0;
 }
 
 
-/* Bottom glow */
+/* Bottom ambient glow */
 
 .hero::after{
 
@@ -152,107 +164,140 @@ body{
 
     position:absolute;
 
-    width:500px;
+    width:700px;
 
-    height:300px;
+    height:250px;
+
+    left:35%;
+
+    bottom:-150px;
+
+    transform:translateX(-50%);
 
     background:
         radial-gradient(
             ellipse,
-            <?php echo $themeColor; ?>12,
+            <?php echo $themeColor; ?>15 0%,
             transparent 70%
         );
 
-    bottom:-150px;
-
-    left:25%;
-
-    filter:blur(35px);
+    filter:blur(45px);
 
     pointer-events:none;
 
+    z-index:0;
 }
 
 
-/* Hero content */
+/* Bootstrap row */
+
+.hero .container,
+.hero .row{
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
 
 .hero-content{
 
     position:relative;
 
-    z-index:5;
-
+    z-index:10;
 }
 
 
-/* Premium tag */
-
 .hero-tag{
 
-    display:inline-block;
+    display:inline-flex;
 
-    padding:8px 16px;
+    align-items:center;
 
-    border-radius:30px;
+    padding:10px 18px;
 
-    background:rgba(255,255,255,.07);
+    border-radius:40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.03)
+        );
+
+    border:1px solid rgba(255,255,255,.12);
 
     backdrop-filter:blur(15px);
-
-    border:1px solid rgba(255,255,255,.10);
 
     font-size:13px;
 
     font-weight:700;
 
-    letter-spacing:1.5px;
+    letter-spacing:1.6px;
 
     color:#e2e8f0;
 
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 10px 30px rgba(0,0,0,.15);
 }
 
 
-/* Hero heading */
+/* =====================================================
+   HERO HEADING
+===================================================== */
 
 .hero h1{
 
-    font-size:72px;
+    font-size:76px;
 
     font-weight:900;
 
-    line-height:1;
+    line-height:.98;
 
-    margin:25px 0;
+    margin:28px 0;
 
-    letter-spacing:-2px;
+    letter-spacing:-3px;
 
+    color:#fff;
 }
+
 
 .hero h1 span{
 
     color:<?php echo $themeColor; ?>;
 
     text-shadow:
-        0 0 25px <?php echo $themeColor; ?>50;
+        0 0 15px <?php echo $themeColor; ?>55,
+        0 0 35px <?php echo $themeColor; ?>25;
 }
 
 
-/* Hero paragraph */
+/* =====================================================
+   HERO PARAGRAPH
+===================================================== */
 
 .hero p{
 
-    color:#cbd5e1;
+    max-width:570px;
 
-    max-width:550px;
+    color:#cbd5e1;
 
     font-size:17px;
 
     line-height:1.8;
 
+    margin-bottom:0;
 }
 
 
-/* Hero button */
+/* =====================================================
+   HERO BUTTON
+===================================================== */
 
 .hero-btn{
 
@@ -260,11 +305,577 @@ body{
 
     align-items:center;
 
-    padding:16px 38px;
+    justify-content:center;
 
-    margin-top:25px;
+    padding:17px 38px;
 
-    border-radius:16px;
+    margin-top:28px;
+
+    border-radius:17px;
+
+    background:<?php echo $themeGradient; ?>;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:800;
+
+    text-decoration:none;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35),
+        0 0 30px <?php echo $themeColor; ?>20;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.hero-btn:hover{
+
+    transform:translateY(-5px);
+
+    color:#fff;
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,.45),
+        0 0 45px <?php echo $themeColor; ?>35;
+}
+
+
+/* =====================================================
+   HERO IMAGE CONTAINER
+===================================================== */
+
+.hero-image-column{
+
+    position:relative;
+
+    min-height:540px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+/* Main image wrapper */
+
+.hero-image-wrap{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:720px;
+
+    height:560px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    isolation:isolate;
+
+}
+
+
+/* =====================================================
+   GLOW BEHIND IMAGE
+===================================================== */
+
+.hero-image-wrap::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            <?php echo $themeColor; ?>30 0%,
+            <?php echo $themeColor; ?>16 28%,
+            <?php echo $themeColor; ?>08 48%,
+            transparent 72%
+        );
+
+    filter:blur(45px);
+
+    z-index:-2;
+
+    pointer-events:none;
+}
+
+
+/* Extra glow */
+
+.hero-image-wrap::after{
+
+    content:'';
+
+    position:absolute;
+
+    width:520px;
+
+    height:130px;
+
+    left:50%;
+
+    bottom:50px;
+
+    transform:translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            <?php echo $themeColor; ?>30 0%,
+            <?php echo $themeColor; ?>12 35%,
+            transparent 72%
+        );
+
+    filter:blur(30px);
+
+    z-index:-1;
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-image{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:720px;
+
+    height:560px;
+
+    object-fit:contain;
+
+    display:block;
+
+    /*
+       Strong feather around image.
+       এতে rectangular edge অনেক বেশি disappear করবে।
+    */
+
+    -webkit-mask-image:
+        radial-gradient(
+            ellipse 74% 72% at center,
+            #000 28%,
+            rgba(0,0,0,.98) 43%,
+            rgba(0,0,0,.82) 55%,
+            rgba(0,0,0,.55) 68%,
+            rgba(0,0,0,.20) 82%,
+            transparent 100%
+        );
+
+    mask-image:
+        radial-gradient(
+            ellipse 74% 72% at center,
+            #000 28%,
+            rgba(0,0,0,.98) 43%,
+            rgba(0,0,0,.82) 55%,
+            rgba(0,0,0,.55) 68%,
+            rgba(0,0,0,.20) 82%,
+            transparent 100%
+        );
+
+    /*
+       Dark image background কে surrounding dark
+       website background-এর সাথে blend করবে।
+    */
+
+    mix-blend-mode:screen;
+
+    filter:
+        drop-shadow(
+            0 25px 35px rgba(0,0,0,.45)
+        )
+        drop-shadow(
+            0 0 40px <?php echo $themeColor; ?>30
+        );
+
+    transition:
+        transform .5s ease,
+        filter .5s ease;
+}
+
+
+/* Hover */
+
+.hero-image:hover{
+
+    transform:scale(1.025);
+
+    filter:
+        drop-shadow(
+            0 30px 45px rgba(0,0,0,.55)
+        )
+        drop-shadow(
+            0 0 60px <?php echo $themeColor; ?>45
+        );
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stat-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    backdrop-filter:blur(12px);
+
+    transition:.3s;
+}
+
+
+.stat-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:<?php echo $themeColor; ?>;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25);
+}
+
+
+.stat-card h2{
+
+    font-size:38px;
+
+    font-weight:900;
+
+    color:<?php echo $themeColor; ?>;
+
+    margin-bottom:5px;
+
+    text-shadow:
+        0 0 20px <?php echo $themeColor; ?>30;
+}
+
+
+.stat-card p{
+
+    color:#cbd5e1;
+
+    margin:0;
+}
+
+
+/* =====================================================
+   FILTER
+===================================================== */
+
+.filter-section{
+
+    padding:70px 0 35px;
+}
+
+
+.filter-btn{
+
+    padding:12px 24px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+    margin:6px;
+
+    font-weight:700;
+
+    transition:.35s;
+}
+
+
+.filter-btn:hover,
+.filter-btn.active{
+
+    background:<?php echo $themeColor; ?>;
+
+    color:white;
+
+    box-shadow:
+        0 8px 25px <?php echo $themeColor; ?>35;
+}
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+.products{
+
+    padding:30px 0 100px;
+}
+
+
+.product-card{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    height:100%;
+
+    transition:.4s;
+}
+
+
+.product-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:<?php echo $themeColor; ?>;
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.4);
+}
+
+
+.product-image{
+
+    height:280px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f8fafc
+        );
+
+    padding:25px;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    transition:.4s;
+}
+
+
+.product-card:hover img{
+
+    transform:scale(1.08);
+}
+
+
+/* =====================================================
+   WISHLIST
+===================================================== */
+
+.wishlist-icon{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    z-index:99;
+}
+
+
+.wishlist-icon a{
+
+    width:46px;
+
+    height:46px;
+
+    background:rgba(255,255,255,.95);
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+
+    text-decoration:none;
+}
+
+
+.wishlist-icon a:hover{
+
+    transform:scale(1.1);
+}
+
+
+.fa-solid.fa-heart{
+
+    color:#ef4444;
+}
+
+
+.fa-regular.fa-heart{
+
+    color:#64748b;
+}
+
+
+/* =====================================================
+   PRODUCT BODY
+===================================================== */
+
+.product-body{
+
+    padding:24px;
+}
+
+
+.product-title{
+
+    font-size:20px;
+
+    font-weight:800;
+
+    margin-bottom:8px;
+
+    min-height:50px;
+}
+
+
+.product-category{
+
+    font-size:13px;
+
+    color:#94a3b8;
+
+    margin-bottom:14px;
+}
+
+
+.rating{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    background:#16a34a;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+}
+
+
+.price{
+
+    font-size:32px;
+
+    font-weight:900;
+
+    color:white;
+
+    margin-bottom:18px;
+}
+
+
+.price::before{
+
+    content:'₹';
+
+    font-size:20px;
+
+    margin-right:3px;
+
+    color:<?php echo $themeColor; ?>;
+}
+
+
+/* =====================================================
+   PRODUCT BUTTON
+===================================================== */
+
+.product-buttons{
+
+    display:block;
+}
+
+
+.buy-btn{
+
+    display:block;
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:14px;
 
     background:<?php echo $themeGradient; ?>;
 
@@ -274,189 +885,223 @@ body{
 
     text-decoration:none;
 
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.30);
+    text-align:center;
 
-    transition:.4s;
-
+    transition:.35s;
 }
 
-.hero-btn:hover{
 
-    transform:translateY(-5px);
+.buy-btn:hover{
+
+    transform:translateY(-4px);
 
     box-shadow:
-        0 20px 45px rgba(0,0,0,.45);
+        0 15px 30px rgba(0,0,0,.3);
 
     color:white;
-
 }
 
 
 /* =====================================================
-   HERO IMAGE AREA
+   GUEST NOTICE
 ===================================================== */
-/* ================= HERO IMAGE - SEAMLESS BLEND ================= */
 
-.hero-image-wrap{
-    position:relative;
-    width:100%;
-    max-width:650px;
-    margin:auto;
+.guest-notice{
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    margin-top:15px;
 
-    /* Background-এর সাথে image blend করার জন্য */
-    background:transparent;
+    font-size:12px;
 
-    overflow:visible;
-}
+    color:#94a3b8;
 
-.hero-image{
-
-    width:100%;
-    max-width:650px;
-
-    height:auto;
-
-    object-fit:contain;
-
-    display:block;
-
-    /*
-    IMAGE-এর চারপাশ fade করে দেবে।
-    তাই rectangular edge বোঝা যাবে না।
-    */
-    -webkit-mask-image:
-        radial-gradient(
-            ellipse 70% 68% at center,
-            black 48%,
-            rgba(0,0,0,.95) 58%,
-            rgba(0,0,0,.65) 70%,
-            rgba(0,0,0,.25) 82%,
-            transparent 100%
-        );
-
-    mask-image:
-        radial-gradient(
-            ellipse 70% 68% at center,
-            black 48%,
-            rgba(0,0,0,.95) 58%,
-            rgba(0,0,0,.65) 70%,
-            rgba(0,0,0,.25) 82%,
-            transparent 100%
-        );
-
-    /*
-    Image-এর dark background page-এর সাথে আরও blend হবে
-    */
-    mix-blend-mode:screen;
-
-    filter:
-        drop-shadow(0 25px 35px rgba(0,0,0,.35))
-        drop-shadow(0 0 35px <?php echo $themeColor; ?>55);
-
-    transition:all .5s ease;
-}
-
-/* Hover করলে খুব subtle zoom */
-
-.hero-image:hover{
-
-    transform:scale(1.025);
-
-    filter:
-        drop-shadow(0 30px 45px rgba(0,0,0,.4))
-        drop-shadow(0 0 45px <?php echo $themeColor; ?>66);
+    text-align:center;
 }
 
 
-/* Hero image hover */
+.guest-notice a{
 
-.hero-image:hover{
+    color:<?php echo $themeColor; ?>;
 
-    transform:scale(1.035);
+    font-weight:700;
 
-    filter:
-        drop-shadow(
-            0 30px 45px rgba(0,0,0,.55)
-        )
-        drop-shadow(
-            0 0 55px <?php echo $themeColor; ?>35
-        );
-
+    text-decoration:none;
 }
 
 
-/*
-|--------------------------------------------------------------------------
-| Glow behind image
-|--------------------------------------------------------------------------
-*/
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-.hero-image-wrapper::before{
+@media(max-width:992px){
 
-    content:'';
+    .hero{
 
-    position:absolute;
+        min-height:auto;
 
-    width:430px;
+        padding:75px 0 60px;
 
-    height:430px;
+        text-align:center;
+    }
 
-    border-radius:50%;
 
-    background:
-        radial-gradient(
-            circle,
-            <?php echo $themeColor; ?>25 0%,
-            <?php echo $themeColor; ?>10 35%,
-            transparent 72%
-        );
+    .hero h1{
 
-    filter:blur(35px);
+        font-size:56px;
 
-    z-index:0;
+        letter-spacing:-2px;
+    }
 
+
+    .hero p{
+
+        margin:0 auto;
+
+        max-width:600px;
+    }
+
+
+    .hero-image-column{
+
+        min-height:470px;
+
+        margin-top:30px;
+    }
+
+
+    .hero-image-wrap{
+
+        height:470px;
+
+        max-width:650px;
+    }
+
+
+    .hero-image{
+
+        height:470px;
+    }
 }
 
 
-/*
-|--------------------------------------------------------------------------
-| Extra soft floor glow
-|--------------------------------------------------------------------------
-*/
+@media(max-width:768px){
 
-.hero-image-wrapper::after{
+    .hero{
 
-    content:'';
+        padding:60px 0 45px;
+    }
 
-    position:absolute;
 
-    width:420px;
+    .hero h1{
 
-    height:100px;
+        font-size:44px;
 
-    bottom:55px;
+        letter-spacing:-1px;
 
-    left:50%;
+        margin:22px 0;
+    }
 
-    transform:translateX(-50%);
 
-    background:
-        radial-gradient(
-            ellipse,
-            <?php echo $themeColor; ?>25,
-            transparent 70%
-        );
+    .hero p{
 
-    filter:blur(25px);
+        font-size:16px;
 
-    z-index:0;
+        line-height:1.7;
+    }
 
+
+    .hero-image-column{
+
+        min-height:370px;
+
+        margin-top:15px;
+    }
+
+
+    .hero-image-wrap{
+
+        height:370px;
+    }
+
+
+    .hero-image{
+
+        height:370px;
+    }
+
+
+    .hero-image-wrap::before{
+
+        width:330px;
+
+        height:330px;
+    }
+
+
+    .hero-image-wrap::after{
+
+        width:350px;
+
+        height:90px;
+    }
+
+
+    .product-image{
+
+        height:220px;
+    }
 }
+
+
+@media(max-width:480px){
+
+    .hero h1{
+
+        font-size:35px;
+    }
+
+
+    .hero-tag{
+
+        font-size:11px;
+
+        padding:8px 13px;
+    }
+
+
+    .hero-btn{
+
+        padding:14px 28px;
+
+        font-size:15px;
+    }
+
+
+    .hero-image-column{
+
+        min-height:300px;
+    }
+
+
+    .hero-image-wrap{
+
+        height:300px;
+    }
+
+
+    .hero-image{
+
+        height:300px;
+    }
+
+
+    .hero-image-wrap::before{
+
+        width:260px;
+
+        height:260px;
+    }
+}
+
 
 
 /* =====================================================

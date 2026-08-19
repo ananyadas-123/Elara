@@ -1161,6 +1161,7 @@ body{
                 $count_data['total'] ?? 0
             );
 
+            
 
             /* =================================================
                PRODUCTS + PRODUCT IMAGE

@@ -1,8 +1,13 @@
 <?php
+
 $brand = "Gucci";
-$themeColor = "gold";
-$themeGradient = "linear-gradient(135deg,gold,#facc15)";
-$heroImage = "../images/g1.jpg";
+
+$themeColor = "#facc15";
+
+$themeGradient = "linear-gradient(135deg,#facc15,#eab308)";
+
+$heroImage = "../images/gucci1.png";
 
 include("template.php");
+
 ?>
